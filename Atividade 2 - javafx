@@ -1,0 +1,57 @@
+package com.mycompany.mavenproject1;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+
+
+/**
+ * JavaFX App
+ */
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception { 
+        // Todo auto-gerated methoud stub
+        // O 2 stage é porque definimos o tipo (nome) que foi usado abaixo.
+        
+        AnchorPane pane = new AnchorPane();
+        pane.setPrefSize(400, 300);
+        
+        // Primeira caixa vazia para digitar
+        TextField  txNome = new TextField();
+        pane.getChildren().add(txNome);
+        txNome.setLayoutX( (pane.getWidth() - txNome.getWidth()) /2);
+        
+        
+        //Adicionar texto pedindo que usuário digite
+        TextField txSenha = new TextField();
+        txSenha.setPromptText("Adicione sua senha");
+        pane.getChildren().add(txSenha);
+        
+        Button txButton = new Button("Entrar");
+        pane.getChildren().add(txButton);
+                
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.show();
+        // É preciso colocar estes códigos de centralizar, abaixo do stage...
+       // Para tomar como base uma tela que existe
+        txNome.setLayoutX( (pane.getWidth() - txNome.getWidth()) /2);
+        txNome.setLayoutY(50);
+        
+        txSenha.setLayoutX( (pane.getWidth() - txSenha.getWidth() ) /2);
+        txSenha.setLayoutY(100);
+        
+        txButton.setLayoutX( (pane.getWidth() - txButton.getWidth() ) /2);
+        txButton.setLayoutY(150);
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}

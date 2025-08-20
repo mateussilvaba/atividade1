@@ -1,0 +1,37 @@
+Atividade 3 - questão 2
+
+ARQUIVO MAIN
+
+public class Main {
+   public static void main(String[] args) {
+       System.out.println("início do programa");
+       // como fiz herança, esse main irá chamar o método do arquivo Threads22
+       Threads22 impressao = new Threads22("a, b, c, d, e, f, j");
+       impressao.start();
+       // o objeto criado foi "impressao", é ele que paramos depois de executado com start();
+       System.out.println("final");
+   } 
+}
+
+ARQUIVO THREADS22
+
+public class Threads22 extends Thread {
+  
+private String letras;
+
+// abaixo é um construtor, o String letras, indica o parâmetro que será impresso
+public Threads22(String letras) { 
+        this.letras = letras;
+}
+ @Override
+    public void run() {
+        for (char letra : letras.toCharArray()) {
+            System.out.println(letra);
+            try {
+                Thread.sleep(100); // Aguarda 100 milissegundos
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

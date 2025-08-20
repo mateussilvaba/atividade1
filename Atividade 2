@@ -1,0 +1,86 @@
+RESPOSTA 6.1
+
+public class Atividade2 {
+
+    public int A(int a, int b) {
+       return a + b;
+   }
+// Método privado
+    private int B(int a, int b) {
+        return a - b;
+    }
+// Método protegido
+    protected void C() {
+       System.out.println("Este é um método protegido.");
+   }
+
+}
+Não testado
+___
+
+CLASSE MAIN
+//Classe pai (superclasse)
+public class Atividade2 {
+
+    //Classe pai (superclasse)
+
+   public static void main(String[] args) {
+       Filha f1 = new Filha();
+       
+       f1.A();
+       f1.B();
+       f1.C();          
+       
+   }
+
+}
+___
+CLASSE PAI
+//Classe pai (superclasse)
+public class Pai {
+   private void A () {
+       System.out.println ("A");
+   }
+   public void B () {
+       System.out.println ("B");
+   }
+   protected void C () {
+       System.out.println ("C");
+   }
+   }
+
+
+
+
+RESPOSTA 6.2
+
+// Classe filha (subclasse)
+public class FilhaAtividade2 extends Atividade2 {
+   System.out.println("Eu sou o método B da Filha \n");
+    }
+
+   @Override // Indica que o método está sobrescrevendo um método da superclasse
+   public void emitirSom() {
+       System.out.println("Au au!");
+   }
+
+
+}
+
+
+
+//Classe pai (superclasse)
+public class Atividade2 {
+
+    //Classe pai (superclasse)
+
+   public static void main(String[] args) {
+       Filha f1 = new Filha();
+       
+       f1.A();
+       f1.B();
+       f1.C();          
+       
+   }
+
+}
